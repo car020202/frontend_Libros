@@ -37,7 +37,7 @@ const Dashboard = () => {
 
 const styles = {
   container: {
-    width: "600px",
+    width: "1600px",
     margin: "100px auto",
     textAlign: "center",
     backgroundColor: "#121212", // Fondo oscuro

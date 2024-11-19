@@ -63,7 +63,7 @@ const AdminDashboard = () => {
 
 const styles = {
   container: {
-    maxWidth: "800px",
+    width: "1000px",
     margin: "30px auto",
     padding: "20px",
     border: "1px solid #BFD2DE", // Bordes celestes
