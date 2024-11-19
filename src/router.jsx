@@ -5,12 +5,12 @@ import Register from "./pages/Register";
 import Dashboard from "./pages/Dashboard";
 import AdminDashboard from "./pages/AdminDashboard";
 import ErrorPage from "./pages/ErrorPage";
-import ManageUsers from "./pages/ManageUsers"; // Nueva página
-import ManageBooks from "./pages/ManageBooks"; // Nueva página
-import AdminStatistics from "./pages/AdminStatistics"; // Nueva página
-import FavoritesList from "./pages/FavoritesList"; // Nueva página para Favoritos
-import EditUser from "./pages/EditUser"; // Nueva página para editar usuarios
-import AddUser from "./pages/AddUser"; // Nueva página para agregar usuarios
+import ManageUsers from "./pages/ManageUsers"; // Página para Gestión de Usuarios
+import ManageBooks from "./pages/ManageBooks"; // Página para Gestión de Libros
+import AdminStatistics from "./pages/AdminStatistics"; // Página para Estadísticas
+import FavoritesList from "./pages/FavoritesList"; // Página para Favoritos
+import EditUser from "./pages/EditUser"; // Página para Editar Usuarios
+import EditBook from "./pages/EditBook"; // Página para Editar Libros
 
 const router = createBrowserRouter([
   {
@@ -47,12 +47,12 @@ const router = createBrowserRouter([
         element: <EditUser />, // Ruta para editar usuarios
       },
       {
-        path: "admin/users/add",
-        element: <AddUser />, // Ruta para agregar usuarios
-      },
-      {
         path: "admin/books",
         element: <ManageBooks />, // Ruta para Gestión de Libros
+      },
+      {
+        path: "admin/books/edit/:id",
+        element: <EditBook />, // Ruta para editar libros
       },
       {
         path: "admin/stats",
