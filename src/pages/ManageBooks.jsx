@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const ManageBooks = () => {
   const [books, setBooks] = useState([]);
   const [form, setForm] = useState({ titulo: "", autor: "", genero: "", estado: 1 });
   const [error, setError] = useState(null);
+  const navigate = useNavigate();
 
   const fetchBooks = async () => {
     try {
@@ -96,6 +98,9 @@ const ManageBooks = () => {
           ))}
         </ul>
       </div>
+      <button style={styles.backButton} onClick={() => navigate("/admin")}>
+        Volver
+      </button>
     </div>
   );
 };
@@ -191,6 +196,17 @@ const styles = {
     fontSize: "14px",
     fontWeight: "bold",
     transition: "background-color 0.3s",
+  },
+  backButton: {
+    marginTop: "20px",
+    padding: "10px 20px",
+    backgroundColor: "#BFD2DE",
+    color: "#121212",
+    border: "none",
+    borderRadius: "4px",
+    cursor: "pointer",
+    fontSize: "16px",
+    fontWeight: "bold",
   },
 };
 

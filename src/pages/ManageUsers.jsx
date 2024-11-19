@@ -1,35 +1,37 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const ManageUsers = () => {
-  const [users, setUsers] = useState([]); // Store user data
-  const [error, setError] = useState(null); // Handle errors
-  const [loading, setLoading] = useState(false); // Handle loading state
+  const [users, setUsers] = useState([]); // Almacena los datos de usuarios
+  const [error, setError] = useState(null); // Maneja errores
+  const [loading, setLoading] = useState(false); // Estado de carga
+  const navigate = useNavigate();
 
-  // Fetch all users
+  // Obtener usuarios
   const fetchUsers = async () => {
-    setLoading(true); // Set loading to true
+    setLoading(true); // Activa el estado de carga
     try {
-      const response = await axios.get("http://localhost:8080/auth/users"); // API call to get users
-      setUsers(response.data); // Update user state
+      const response = await axios.get("http://localhost:8080/auth/users"); // Llamada a la API
+      setUsers(response.data); // Actualiza el estado con los usuarios
     } catch (err) {
       setError("Error al cargar los usuarios.");
     } finally {
-      setLoading(false); // Stop loading
+      setLoading(false); // Desactiva el estado de carga
     }
   };
 
-  // Delete a user
+  // Eliminar un usuario
   const handleDelete = async (id) => {
-    const adminEmail = JSON.parse(localStorage.getItem("user")).email; // Admin email from localStorage
+    const adminEmail = JSON.parse(localStorage.getItem("user")).email; // Obtén el correo del administrador
 
-    if (!window.confirm("¿Estás seguro de eliminar este usuario?")) return; // Confirm deletion
+    if (!window.confirm("¿Estás seguro de eliminar este usuario?")) return; // Confirmar eliminación
     try {
       await axios.delete("http://localhost:8080/auth/user/delete", {
         data: { id, adminEmail },
-      }); // API call to delete the user
+      }); // Llamada a la API para eliminar
       alert("Usuario eliminado exitosamente.");
-      fetchUsers(); // Refresh user list after deletion
+      fetchUsers(); // Actualizar la lista de usuarios
     } catch (err) {
       alert(
         err.response?.data || "Error al eliminar el usuario. Inténtalo de nuevo."
@@ -38,7 +40,7 @@ const ManageUsers = () => {
   };
 
   useEffect(() => {
-    fetchUsers(); // Fetch users when the component mounts
+    fetchUsers(); // Cargar usuarios al montar el componente
   }, []);
 
   return (
@@ -84,55 +86,58 @@ const ManageUsers = () => {
       {!loading && users.length === 0 && (
         <p style={styles.noUsers}>No hay usuarios registrados.</p>
       )}
+      <button style={styles.backButton} onClick={() => navigate("/admin")}>
+        Volver
+      </button>
     </div>
   );
 };
 
-// Styling
+// Estilos
 const styles = {
   container: {
-    width: "900px",
+    width: "1200px",
     margin: "100px auto",
-    padding: "20px",
+    padding: "40px",
     border: "1px solid #ccc",
     borderRadius: "8px",
-    backgroundColor: "#121212", // Dark background
-    color: "#fff", // White text
+    backgroundColor: "#121212", // Fondo oscuro
+    color: "#fff", // Texto blanco
     textAlign: "center",
-    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)", // Subtle shadow
+    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)", // Sombra
   },
   title: {
     fontSize: "24px",
     fontWeight: "bold",
     marginBottom: "20px",
-    color: "#BFD2DE", // Light blue title
+    color: "#BFD2DE", // Azul claro
   },
   loading: {
-    color: "#FFD700", // Yellow loading text
+    color: "#FFD700", // Amarillo para el estado de carga
     fontWeight: "bold",
   },
   error: {
-    color: "#FF6F61", // Red error text
+    color: "#FF6F61", // Rojo para errores
     marginBottom: "15px",
     fontWeight: "bold",
   },
   noUsers: {
-    color: "#BFD2DE", // Light blue for "no users" text
+    color: "#BFD2DE", // Azul claro para texto sin usuarios
   },
   table: {
     width: "100%",
     borderCollapse: "collapse",
-    backgroundColor: "#1E1E1E", // Dark table background
+    backgroundColor: "#1E1E1E", // Fondo oscuro para la tabla
     color: "#fff",
   },
   th: {
-    backgroundColor: "#BFD2DE", // Light blue headers
+    backgroundColor: "#BFD2DE", // Encabezados de la tabla
     color: "#121212",
     padding: "10px",
     border: "1px solid #ccc",
   },
   tr: {
-    backgroundColor: "#121212", // Row background
+    backgroundColor: "#121212", // Filas de la tabla
   },
   td: {
     padding: "10px",
@@ -140,12 +145,23 @@ const styles = {
     textAlign: "left",
   },
   deleteButton: {
-    backgroundColor: "#FF6F61", // Red button
+    backgroundColor: "#FF6F61", // Rojo para el botón de eliminar
     color: "#fff",
     border: "none",
     padding: "5px 10px",
     borderRadius: "4px",
     cursor: "pointer",
+    fontWeight: "bold",
+  },
+  backButton: {
+    marginTop: "50px",
+    padding: "10px 20px",
+    backgroundColor: "#BFD2DE", // Azul claro para el botón de volver
+    color: "#121212", // Texto oscuro
+    border: "none",
+    borderRadius: "4px",
+    cursor: "pointer",
+    fontSize: "16px",
     fontWeight: "bold",
   },
 };

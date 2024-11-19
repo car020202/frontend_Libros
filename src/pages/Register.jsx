@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import axios from "axios"; // Librería para realizar peticiones HTTP
+import axios from "axios";
 import { useNavigate } from "react-router-dom";
-
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -34,6 +33,10 @@ const Register = () => {
       console.error(err);
       setError(err.response ? err.response.data : "Error en el servidor");
     }
+  };
+
+  const handleBack = () => {
+    navigate("/"); // Redirigir al login o página principal
   };
 
   return (
@@ -94,6 +97,9 @@ const Register = () => {
           />
         </div>
         <button type="submit" style={styles.button}>Registrarse</button>
+        <button type="button" style={styles.backButton} onClick={handleBack}>
+          Volver
+        </button>
       </form>
     </div>
   );
@@ -102,7 +108,7 @@ const Register = () => {
 // Estilos en línea
 const styles = {
   container: {
-    width: "600px", // Ancho incrementado
+    width: "600px",
     margin: "100px auto",
     padding: "40px",
     border: "1px solid #BABAD9",
@@ -113,7 +119,7 @@ const styles = {
   title: {
     textAlign: "center",
     marginBottom: "20px",
-    fontSize: "24px", // Tamaño del texto más grande
+    fontSize: "24px",
     color: "#BFD2DE", // Azul claro para el título
   },
   error: {
@@ -125,22 +131,22 @@ const styles = {
     flexDirection: "column",
   },
   inputGroup: {
-    marginBottom: "20px", // Más espacio entre campos
+    marginBottom: "20px",
   },
   label: {
     display: "block",
     marginBottom: "8px",
     color: "#FFFFFF", // Texto blanco
-    fontSize: "16px", // Tamaño de etiqueta más claro
+    fontSize: "16px",
   },
   input: {
     width: "100%",
     padding: "12px",
     borderRadius: "5px",
     border: "1px solid #BABAD9",
-    backgroundColor: "#121212", // Fondo oscuro
-    color: "#FFFFFF", // Texto blanco
-    fontSize: "16px", // Tamaño de texto más grande
+    backgroundColor: "#121212",
+    color: "#FFFFFF",
+    fontSize: "16px",
   },
   button: {
     padding: "12px",
@@ -149,8 +155,20 @@ const styles = {
     border: "none",
     borderRadius: "5px",
     cursor: "pointer",
-    fontSize: "16px", // Texto más claro en botón
-    fontWeight: "bold", // Negrita para destacar
+    fontSize: "16px",
+    fontWeight: "bold",
+    marginTop: "10px",
+  },
+  backButton: {
+    padding: "12px",
+    backgroundColor: "#FF6F61", // Rojo claro para el botón de volver
+    color: "#FFFFFF", // Texto blanco
+    border: "none",
+    borderRadius: "5px",
+    cursor: "pointer",
+    fontSize: "16px",
+    fontWeight: "bold",
+    marginTop: "10px",
   },
 };
 
