@@ -91,8 +91,8 @@ const ManageUsers = () => {
 // Styling
 const styles = {
   container: {
-    maxWidth: "800px",
-    margin: "50px auto",
+    width: "900px",
+    margin: "100px auto",
     padding: "20px",
     border: "1px solid #ccc",
     borderRadius: "8px",
