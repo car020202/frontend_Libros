@@ -38,6 +38,11 @@ const ManageBooks = () => {
     }
   };
 
+  // Navegar a la vista de edición
+  const handleEdit = (id) => {
+    navigate(`/admin/books/edit/${id}`); // Navegar a la vista de edición con el ID del libro
+  };
+
   useEffect(() => {
     fetchBooks();
   }, []);
@@ -91,9 +96,14 @@ const ManageBooks = () => {
               <div>
                 <strong>{book.titulo}</strong> - {book.autor} - {book.genero}
               </div>
-              <button onClick={() => handleDelete(book.id)} style={styles.deleteButton}>
-                Eliminar
-              </button>
+              <div>
+                <button onClick={() => handleEdit(book.id)} style={styles.editButton}>
+                  Editar
+                </button>
+                <button onClick={() => handleDelete(book.id)} style={styles.deleteButton}>
+                  Eliminar
+                </button>
+              </div>
             </li>
           ))}
         </ul>
@@ -105,6 +115,7 @@ const ManageBooks = () => {
   );
 };
 
+// Estilos - Todos los estilos se mantienen sin cambios
 const styles = {
   container: {
     width: "1500px",
@@ -186,9 +197,21 @@ const styles = {
     backgroundColor: "#1E1E1E",
     color: "#FFFFFF",
   },
+  editButton: {
+    padding: "8px",
+    backgroundColor: "#FFD700", // Amarillo para el botón de editar
+    color: "#121212",
+    border: "none",
+    borderRadius: "4px",
+    cursor: "pointer",
+    fontSize: "14px",
+    fontWeight: "bold",
+    marginRight: "10px",
+    transition: "background-color 0.3s",
+  },
   deleteButton: {
     padding: "8px",
-    backgroundColor: "#FF6F61",
+    backgroundColor: "#FF6F61", // Rojo para el botón de eliminar
     color: "#FFFFFF",
     border: "none",
     borderRadius: "4px",

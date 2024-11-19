@@ -9,6 +9,8 @@ import ManageUsers from "./pages/ManageUsers"; // Nueva página
 import ManageBooks from "./pages/ManageBooks"; // Nueva página
 import AdminStatistics from "./pages/AdminStatistics"; // Nueva página
 import FavoritesList from "./pages/FavoritesList"; // Nueva página para Favoritos
+import EditUser from "./pages/EditUser"; // Nueva página para editar usuarios
+import AddUser from "./pages/AddUser"; // Nueva página para agregar usuarios
 
 const router = createBrowserRouter([
   {
@@ -39,6 +41,14 @@ const router = createBrowserRouter([
       {
         path: "admin/users",
         element: <ManageUsers />, // Ruta para Gestión de Usuarios
+      },
+      {
+        path: "admin/users/edit/:id",
+        element: <EditUser />, // Ruta para editar usuarios
+      },
+      {
+        path: "admin/users/add",
+        element: <AddUser />, // Ruta para agregar usuarios
       },
       {
         path: "admin/books",
