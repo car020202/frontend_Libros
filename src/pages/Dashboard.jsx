@@ -37,33 +37,48 @@ const Dashboard = () => {
 
 const styles = {
   container: {
-    maxWidth: "600px",
-    margin: "50px auto",
+    width: "600px",
+    margin: "100px auto",
     textAlign: "center",
+    backgroundColor: "#121212", // Fondo oscuro
+    padding: "30px",
+    borderRadius: "8px",
+    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)", // Sombra ligera
+    color: "#FFFFFF", // Texto blanco
   },
   title: {
     fontSize: "24px",
     marginBottom: "20px",
+    fontWeight: "bold",
+    color: "#BFD2DE", // Azul claro para el título
   },
   text: {
     marginBottom: "10px",
+    fontSize: "16px",
+    color: "#BABAD9", // Gris claro para el texto
   },
   favoriteButton: {
-    padding: "10px",
-    backgroundColor: "#007BFF",
-    color: "white",
+    padding: "12px",
+    backgroundColor: "#BFD2DE", // Azul claro para el botón
+    color: "#121212", // Texto oscuro
     border: "none",
-    borderRadius: "4px",
+    borderRadius: "6px",
     cursor: "pointer",
+    fontSize: "16px",
+    fontWeight: "bold",
+    transition: "background-color 0.3s",
     marginBottom: "20px",
   },
   logoutButton: {
-    padding: "10px",
-    backgroundColor: "#dc3545",
-    color: "white",
+    padding: "12px",
+    backgroundColor: "#FF6F61", // Rojo para el botón de cerrar sesión
+    color: "#FFFFFF", // Texto blanco
     border: "none",
-    borderRadius: "4px",
+    borderRadius: "6px",
     cursor: "pointer",
+    fontSize: "16px",
+    fontWeight: "bold",
+    transition: "background-color 0.3s",
   },
 };
 

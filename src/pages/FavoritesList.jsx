@@ -85,23 +85,27 @@ const FavoritesList = () => {
 
 const styles = {
   container: {
-    maxWidth: "900px",
+    width: "900px", // Ancho fijo en lugar de maxWidth
     margin: "30px auto",
     textAlign: "center",
     padding: "20px",
-    border: "1px solid #ccc",
+    border: "1px solid #BABAD9", // Bordes con color consistente
     borderRadius: "8px",
-    backgroundColor: "#f9f9f9",
+    backgroundColor: "#121212", // Fondo oscuro
+    color: "#FFFFFF", // Texto blanco
+    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)", // Sombra para dar profundidad
   },
   title: {
     fontSize: "28px",
     marginBottom: "20px",
     fontWeight: "bold",
+    color: "#BFD2DE", // Azul claro para el título
   },
   error: {
-    color: "red",
+    color: "#FF6F61", // Rojo para errores
     marginBottom: "20px",
     fontSize: "16px",
+    fontWeight: "bold",
   },
   bookList: {
     display: "grid",
@@ -110,37 +114,39 @@ const styles = {
     marginTop: "20px",
   },
   bookCard: {
-    border: "1px solid #ddd",
+    border: "1px solid #BABAD9", // Bordes celestes
     borderRadius: "8px",
     padding: "15px",
     textAlign: "left",
-    backgroundColor: "#fff",
-    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+    backgroundColor: "#1E1E1E", // Fondo oscuro para las tarjetas
+    color: "#FFFFFF", // Texto blanco
+    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)", // Sombra para tarjetas
   },
   bookTitle: {
     fontSize: "18px",
     fontWeight: "bold",
     marginBottom: "10px",
-    color: "#333",
+    color: "#BFD2DE", // Azul claro para los títulos de libros
   },
   bookDetails: {
     fontSize: "14px",
     marginBottom: "10px",
-    color: "#555",
+    color: "#BABAD9", // Gris claro para los detalles
   },
   removeButton: {
     padding: "10px 15px",
-    backgroundColor: "#dc3545",
-    color: "white",
+    backgroundColor: "#FF6F61", // Rojo para el botón de eliminar
+    color: "#FFFFFF", // Texto blanco
     border: "none",
     borderRadius: "4px",
     cursor: "pointer",
     fontSize: "14px",
     fontWeight: "bold",
+    transition: "background-color 0.3s", // Transición para mejor interacción
   },
   noFavorites: {
     fontSize: "16px",
-    color: "#666",
+    color: "#BABAD9", // Gris claro para el texto de "sin favoritos"
   },
 };
 

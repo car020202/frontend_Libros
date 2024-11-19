@@ -75,17 +75,21 @@ const styles = {
     padding: "20px",
     maxWidth: "1200px",
     margin: "0 auto",
+    backgroundColor: "#121212", // Fondo oscuro
+    color: "#FFFFFF", // Texto blanco
   },
   title: {
     textAlign: "center",
     marginBottom: "20px",
     fontSize: "24px",
-    color: "#333",
+    fontWeight: "bold",
+    color: "#BFD2DE", // Azul claro para el título
   },
   error: {
-    color: "red",
+    color: "#FF6F61", // Rojo para errores
     textAlign: "center",
     marginBottom: "20px",
+    fontWeight: "bold",
   },
   grid: {
     display: "grid",
@@ -93,38 +97,43 @@ const styles = {
     gap: "20px",
   },
   card: {
-    border: "1px solid #ccc",
+    border: "1px solid #BFD2DE", // Bordes celestes
     borderRadius: "8px",
     padding: "20px",
-    boxShadow: "0 2px 5px rgba(0,0,0,0.1)",
+    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)", // Sombra ligera
     textAlign: "center",
-    backgroundColor: "#f9f9f9",
+    backgroundColor: "#1E1E1E", // Fondo oscuro para la tarjeta
+    color: "#FFFFFF", // Texto blanco
   },
   bookTitle: {
     fontSize: "20px",
     fontWeight: "bold",
     marginBottom: "10px",
-    color: "#333",
+    color: "#FFFFFF", // Texto blanco
   },
   author: {
     fontSize: "16px",
     marginBottom: "10px",
-    color: "#666",
+    color: "#BFD2DE", // Azul claro para autor
   },
   genre: {
     fontSize: "14px",
     marginBottom: "20px",
-    color: "#888",
+    color: "#BABAD9", // Gris claro para género
   },
   button: {
     padding: "10px 20px",
-    backgroundColor: "#007BFF",
-    color: "#fff",
+    backgroundColor: "#BFD2DE", // Azul claro para botones
+    color: "#121212", // Texto oscuro para contraste
     border: "none",
     borderRadius: "5px",
     cursor: "pointer",
     fontSize: "14px",
+    fontWeight: "bold",
+    transition: "background-color 0.3s",
   },
 };
+
+
 
 export default BooksList;

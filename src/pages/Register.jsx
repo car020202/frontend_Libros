@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios"; // Librería para realizar peticiones HTTP
 import { useNavigate } from "react-router-dom";
 
+
 const Register = () => {
   const [formData, setFormData] = useState({
     nombre: "",
@@ -101,16 +102,19 @@ const Register = () => {
 // Estilos en línea
 const styles = {
   container: {
-    maxWidth: "400px",
-    margin: "50px auto",
-    padding: "20px",
-    border: "1px solid #ccc",
-    borderRadius: "8px",
-    backgroundColor: "#f9f9f9",
+    width: "600px", // Ancho incrementado
+    margin: "100px auto",
+    padding: "40px",
+    border: "1px solid #BABAD9",
+    borderRadius: "10px",
+    backgroundColor: "#121212", // Fondo oscuro
+    color: "#FFFFFF", // Texto blanco
   },
   title: {
     textAlign: "center",
     marginBottom: "20px",
+    fontSize: "24px", // Tamaño del texto más grande
+    color: "#BFD2DE", // Azul claro para el título
   },
   error: {
     color: "red",
@@ -121,25 +125,32 @@ const styles = {
     flexDirection: "column",
   },
   inputGroup: {
-    marginBottom: "15px",
+    marginBottom: "20px", // Más espacio entre campos
   },
   label: {
     display: "block",
-    marginBottom: "5px",
+    marginBottom: "8px",
+    color: "#FFFFFF", // Texto blanco
+    fontSize: "16px", // Tamaño de etiqueta más claro
   },
   input: {
     width: "100%",
-    padding: "10px",
-    borderRadius: "4px",
-    border: "1px solid #ccc",
+    padding: "12px",
+    borderRadius: "5px",
+    border: "1px solid #BABAD9",
+    backgroundColor: "#121212", // Fondo oscuro
+    color: "#FFFFFF", // Texto blanco
+    fontSize: "16px", // Tamaño de texto más grande
   },
   button: {
-    padding: "10px",
-    backgroundColor: "#28a745",
-    color: "white",
+    padding: "12px",
+    backgroundColor: "#BFD2DE", // Azul claro para el botón
+    color: "#121212", // Texto oscuro para contraste
     border: "none",
-    borderRadius: "4px",
+    borderRadius: "5px",
     cursor: "pointer",
+    fontSize: "16px", // Texto más claro en botón
+    fontWeight: "bold", // Negrita para destacar
   },
 };
 

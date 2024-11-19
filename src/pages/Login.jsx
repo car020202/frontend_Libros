@@ -88,59 +88,79 @@ const Login = () => {
 };
 
 // Estilos
+// Estilos
 const styles = {
   container: {
-    maxWidth: "400px",
-    margin: "50px auto",
-    padding: "20px",
-    border: "1px solid #ccc",
-    borderRadius: "8px",
-    backgroundColor: "#f9f9f9",
+    width: "600px", // Cambiado a 600px
+    margin: "100px auto", // Margen superior e inferior de 100px
+    padding: "30px",
+    borderRadius: "10px",
+    backgroundColor: "#121212", // Negro grisáceo
+    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
+    color: "#FFFFFF", // Blanco para el texto
   },
   title: {
     textAlign: "center",
     marginBottom: "20px",
+    fontSize: "24px",
+    fontWeight: "bold",
+    color: "#FFFFFF", // Blanco puro
   },
   error: {
-    color: "red",
-    marginBottom: "10px",
+    color: "#FF6F61", // Rojo para errores
+    marginBottom: "15px",
+    textAlign: "center",
+    fontWeight: "bold",
   },
   form: {
     display: "flex",
     flexDirection: "column",
+    gap: "15px",
   },
   inputGroup: {
     marginBottom: "15px",
   },
   label: {
     display: "block",
-    marginBottom: "5px",
+    marginBottom: "8px",
+    fontWeight: "bold",
+    color: "#FFFFFF", // Blanco puro
   },
   input: {
     width: "100%",
-    padding: "10px",
-    borderRadius: "4px",
-    border: "1px solid #ccc",
+    padding: "12px",
+    borderRadius: "6px",
+    border: "1px solid #BFD2DE", // Bordes celestes
+    fontSize: "14px",
+    backgroundColor: "#1E1E1E", // Fondo oscuro para el input
+    color: "#FFFFFF", // Texto blanco
+    transition: "border 0.3s",
   },
   button: {
-    padding: "10px",
-    backgroundColor: "#007BFF",
-    color: "white",
+    padding: "12px",
+    backgroundColor: "#BFD2DE", // Botón celeste
+    color: "#121212", // Texto oscuro
     border: "none",
-    borderRadius: "4px",
+    borderRadius: "6px",
     cursor: "pointer",
-    marginTop: "10px",
+    fontSize: "16px",
+    fontWeight: "bold",
+    transition: "background-color 0.3s",
   },
   registerButton: {
-    padding: "10px",
-    backgroundColor: "#28a745",
-    color: "white",
+    padding: "12px",
+    backgroundColor: "#BFD2DE", // Celeste uniforme para registro
+    color: "#121212", // Texto oscuro
     border: "none",
-    borderRadius: "4px",
+    borderRadius: "6px",
     cursor: "pointer",
-    marginTop: "15px",
+    fontSize: "16px",
+    fontWeight: "bold",
+    marginTop: "20px",
     width: "100%",
+    transition: "background-color 0.3s",
   },
 };
+
 
 export default Login;

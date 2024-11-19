@@ -100,51 +100,61 @@ const ManageBooks = () => {
 
 const styles = {
   container: {
-    maxWidth: "600px",
+    width: "600px", // Ancho fijo para consistencia
     margin: "30px auto",
     padding: "20px",
-    border: "1px solid #ccc",
+    border: "1px solid #BABAD9", // Bordes gris claro
     borderRadius: "8px",
-    backgroundColor: "#f9f9f9",
+    backgroundColor: "#121212", // Fondo oscuro
+    color: "#FFFFFF", // Texto blanco
+    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)", // Sombra para resaltar el contenedor
   },
   title: {
     textAlign: "center",
     marginBottom: "20px",
     fontSize: "24px",
     fontWeight: "bold",
+    color: "#BFD2DE", // Azul claro para el título
   },
   error: {
-    color: "red",
+    color: "#FF6F61", // Rojo para errores
     textAlign: "center",
     marginBottom: "15px",
+    fontWeight: "bold",
   },
   form: {
     display: "flex",
     flexDirection: "column",
+    gap: "15px", // Espaciado uniforme entre elementos
     marginBottom: "20px",
   },
   input: {
     padding: "10px",
-    marginBottom: "10px",
     borderRadius: "4px",
-    border: "1px solid #ccc",
+    border: "1px solid #BABAD9", // Bordes gris claro
+    backgroundColor: "#1E1E1E", // Fondo oscuro para los inputs
+    color: "#FFFFFF", // Texto blanco
     fontSize: "16px",
+    transition: "border 0.3s", // Suavidad en el cambio de estilo al interactuar
   },
   select: {
     padding: "10px",
-    marginBottom: "10px",
     borderRadius: "4px",
-    border: "1px solid #ccc",
+    border: "1px solid #BABAD9", // Bordes gris claro
+    backgroundColor: "#1E1E1E", // Fondo oscuro para el select
+    color: "#FFFFFF", // Texto blanco
     fontSize: "16px",
   },
   button: {
     padding: "10px",
-    backgroundColor: "#007BFF",
-    color: "white",
+    backgroundColor: "#BFD2DE", // Azul claro para el botón
+    color: "#121212", // Texto oscuro para contraste
     border: "none",
     borderRadius: "4px",
     cursor: "pointer",
     fontSize: "16px",
+    fontWeight: "bold",
+    transition: "background-color 0.3s",
   },
   list: {
     listStyleType: "none",
@@ -156,18 +166,21 @@ const styles = {
     alignItems: "center",
     padding: "10px",
     marginBottom: "10px",
-    border: "1px solid #ddd",
+    border: "1px solid #BABAD9", // Bordes gris claro
     borderRadius: "4px",
-    backgroundColor: "#fff",
+    backgroundColor: "#1E1E1E", // Fondo oscuro
+    color: "#FFFFFF", // Texto blanco
   },
   deleteButton: {
     padding: "8px",
-    backgroundColor: "#dc3545",
-    color: "white",
+    backgroundColor: "#FF6F61", // Rojo para botón de eliminar
+    color: "#FFFFFF", // Texto blanco
     border: "none",
     borderRadius: "4px",
     cursor: "pointer",
     fontSize: "14px",
+    fontWeight: "bold",
+    transition: "background-color 0.3s",
   },
 };
 

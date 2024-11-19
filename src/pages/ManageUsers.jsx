@@ -69,50 +69,58 @@ const ManageUsers = () => {
 
 const styles = {
   container: {
-    maxWidth: "800px",
+    width: "800px", // Se cambió maxWidth por width
     margin: "30px auto",
     padding: "20px",
-    border: "1px solid #ccc",
+    border: "1px solid #BABAD9", // Bordes en gris claro
     borderRadius: "8px",
-    backgroundColor: "#f9f9f9",
+    backgroundColor: "#121212", // Fondo oscuro
+    color: "#FFFFFF", // Texto blanco
     textAlign: "center",
+    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)", // Sombra para el contenedor
   },
   title: {
     fontSize: "24px",
     fontWeight: "bold",
     marginBottom: "20px",
+    color: "#BFD2DE", // Azul claro para el título
   },
   error: {
-    color: "red",
+    color: "#FF6F61", // Rojo para errores
     fontWeight: "bold",
   },
   table: {
     width: "100%",
     borderCollapse: "collapse",
     marginTop: "20px",
+    backgroundColor: "#1E1E1E", // Fondo oscuro para la tabla
+    color: "#FFFFFF", // Texto blanco
   },
   th: {
-    backgroundColor: "#007BFF",
-    color: "white",
+    backgroundColor: "#BFD2DE", // Azul claro para encabezados de la tabla
+    color: "#121212", // Texto oscuro
     padding: "10px",
-    border: "1px solid #ccc",
+    border: "1px solid #BABAD9", // Bordes claros
     textAlign: "left",
   },
   tr: {
-    backgroundColor: "#f9f9f9",
+    backgroundColor: "#121212", // Fondo oscuro para filas
   },
   td: {
     padding: "10px",
-    border: "1px solid #ccc",
+    border: "1px solid #BABAD9", // Bordes claros
     textAlign: "left",
+    color: "#FFFFFF", // Texto blanco
   },
   deleteButton: {
-    backgroundColor: "#dc3545",
-    color: "white",
+    backgroundColor: "#FF6F61", // Rojo para el botón de eliminar
+    color: "#FFFFFF", // Texto blanco
     border: "none",
     padding: "5px 10px",
     borderRadius: "4px",
     cursor: "pointer",
+    transition: "background-color 0.3s", // Suavidad al interactuar con el botón
+    fontWeight: "bold",
   },
 };
 

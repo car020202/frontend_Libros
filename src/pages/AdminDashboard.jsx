@@ -66,52 +66,61 @@ const styles = {
     maxWidth: "800px",
     margin: "30px auto",
     padding: "20px",
-    border: "1px solid #ccc",
+    border: "1px solid #BFD2DE", // Bordes celestes
     borderRadius: "8px",
-    backgroundColor: "#f9f9f9",
+    backgroundColor: "#121212", // Negro grisáceo
     textAlign: "center",
+    color: "#FFFFFF", // Texto blanco
   },
   title: {
     fontSize: "28px",
     fontWeight: "bold",
     marginBottom: "20px",
+    color: "#FFFFFF", // Blanco puro
   },
   subTitle: {
     fontSize: "22px",
     marginTop: "30px",
     marginBottom: "15px",
     fontWeight: "bold",
+    color: "#BFD2DE", // Azul claro para subtítulos
   },
   text: {
     marginBottom: "10px",
     fontSize: "16px",
-    color: "#333",
+    color: "#FFFFFF", // Texto blanco
   },
   section: {
     marginTop: "20px",
     textAlign: "left",
-    border: "1px solid #ddd",
+    border: "1px solid #BFD2DE", // Bordes celestes
     padding: "15px",
     borderRadius: "8px",
     marginBottom: "20px",
+    backgroundColor: "#1E1E1E", // Fondo oscuro para secciones
+    color: "#FFFFFF", // Texto blanco
   },
   button: {
     padding: "10px 20px",
-    backgroundColor: "#007BFF",
-    color: "white",
+    backgroundColor: "#BFD2DE", // Azul claro para botones
+    color: "#121212", // Texto oscuro
     border: "none",
     borderRadius: "4px",
     cursor: "pointer",
     marginTop: "10px",
+    fontWeight: "bold", // Negrita para destacar
+    transition: "background-color 0.3s",
   },
   logoutButton: {
     padding: "10px 20px",
     marginTop: "20px",
-    backgroundColor: "#dc3545",
-    color: "white",
+    backgroundColor: "#FF6F61", // Rojo para botón de logout
+    color: "#FFFFFF", // Texto blanco
     border: "none",
     borderRadius: "4px",
     cursor: "pointer",
+    fontWeight: "bold", // Negrita para destacar
+    transition: "background-color 0.3s",
   },
 };
 
