@@ -9,7 +9,7 @@ const Register = () => {
     email: "",
     clave: "",
     estado: "activo", // Valor predeterminado
-    accesoSistema: true, // Valor predeterminado
+    accesoSistema: false, // Valor predeterminado
   });
   const [error, setError] = useState(null);
   const navigate = useNavigate();

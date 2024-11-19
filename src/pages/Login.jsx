@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 const Login = () => {
   const [formData, setFormData] = useState({ email: "", password: "" });
   const [error, setError] = useState(null);
-  const navigate = useNavigate(); // Para redirigir a otras rutas
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -17,18 +17,28 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setError(null); // Limpiar errores previos
+
     try {
       const response = await axios.post("http://localhost:8080/auth/login", formData);
-      console.log("Usuario autenticado:", response.data);
 
-      // Aquí podrías guardar el token si el backend lo devuelve
-      localStorage.setItem("user", JSON.stringify(response.data));
+      // Guardar datos del usuario en localStorage
+      const user = response.data;
+      localStorage.setItem("user", JSON.stringify(user));
+      console.log(user)
 
-      // Redirigir a la página siguiente
-      navigate("/dashboard");
+      // Verificar si el usuario tiene acceso como administrador o usuario normal
+      if (user.accesoSistema) {
+        navigate("/admin"); // Redirige al AdminDashboard
+      } else {
+        navigate("/dashboard"); // Redirige al Dashboard para usuarios normales
+      }
+      
     } catch (err) {
       console.error(err);
-      setError(err.response ? err.response.data : "Error en el servidor");
+      setError(
+        err.response?.data?.message || "Error al iniciar sesión. Verifica tus datos."
+      );
     }
   };
 
@@ -70,7 +80,6 @@ const Login = () => {
         <button type="submit" style={styles.button}>Ingresar</button>
       </form>
 
-      {/* Botón para registrarse */}
       <button onClick={handleRegisterRedirect} style={styles.registerButton}>
         ¿No tienes cuenta? Regístrate
       </button>
